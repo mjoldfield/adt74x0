@@ -1,0 +1,2 @@
+A very simple user space program to read the temperature
+ from ADT7410 and ADT7420 I2C sensors.
