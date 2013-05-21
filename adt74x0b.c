@@ -61,7 +61,10 @@ int main(int argc, const char *argv[])
 {
   bcm2835_init();
   bcm2835_i2c_begin();
-  bcm2835_i2c_set_baudrate(100000);
+
+  // slowing down to 10kHz (std is 100kHz) works better
+  // when the cables are long and termination dodgy...
+  bcm2835_i2c_set_baudrate(10000);
 
   // Keep track of the status of all I2C devices:
   //    +ve good, 0 ignorable, -ve bad
